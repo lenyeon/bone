@@ -1,0 +1,20 @@
+{% extends "bone/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Ask Django</h1>
+        <ul>
+        {% for post in post_list %}
+          <li>
+          <a href = "{% url 'bone.views.post_detail' post.pk %}">
+        {{post.title}}
+        </a>
+          </li>
+
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{%endblock%}
